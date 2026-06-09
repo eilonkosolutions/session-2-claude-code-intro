@@ -1,6 +1,8 @@
 # Session 2 — Challenges: Your First Build
 
-*We'll do these together through the back half of the session, in two acts. **Act 1 — Directing:** get the agent running on the material you brought, and build something real. **Act 2 — Supercharging:** give the agent new powers — design, eyes, and a live URL — and watch your site go from folder to the public internet.*
+*We'll do these together through the back half of the session, in two acts. **Act 1 — Directing:** get the agent running on the material you brought, and build something real. **Act 2 — Supercharging:** install someone else's design expertise into your agent and watch your site level up in a single command.*
+
+> 🌱 **Keep your project folder.** Next session we hand this same site two more powers — *eyes* (a real browser the agent drives to debug it) and a *live URL* on the public internet. We pick up right where we stop today.
 
 ---
 
@@ -89,81 +91,43 @@ Now **iterate** — this is where it gets fun. One instruction at a time:
 
 ---
 
-## Challenge 4 — Give It Eyes: Debug with Playwright (~12 min)
-
-**Goal:** Hand the agent a real web browser. Where a skill teaches it a *craft*, a **CLI tool** gives it a *superpower it can run* — here, **Playwright**, which opens your site in an actual browser, takes screenshots, and catches what's broken.
-
-**1. Install Playwright.** In your terminal, in the same project folder. **The command is identical on Mac and Windows:**
-```
-npm init playwright@latest
-```
-It asks a few setup questions — answer them like this:
-  - **TypeScript or JavaScript?** → arrow down to **JavaScript** and press enter *(simpler — no build step, and Claude writes the scripts anyway)*
-  - **Where to put your tests?** → just press enter (keep `tests`)
-  - **Add a GitHub Actions workflow?** → press enter (no)
-  - **Install Playwright browsers?** → **choose Yes** (type `Y`, press enter). ⚠️ **Don't skip this one** — without the browsers, Playwright has nothing to open and the next step fails. *Said no by accident? Just run `npx playwright install` to download them now.*
-
-The browser download takes a minute the first time, and a couple of config files land in your folder — **that's normal, leave them.** *(Needs Node.js 18+ — if `npm` isn't found, install it first: see "Stuck?" at the bottom.)*
-
-> ✅ **Worked if** `npx playwright --version` prints a version number.
-
-**2. Put it to work.** Point it at the site you built (the folder with your `index.html`) and ask Claude:
-> *"Use Playwright to open my index.html in a real browser window I can watch — **headed mode, not headless**. Resize it to a desktop size (1280px) and then a phone size (390px), screenshot each, and check the console for errors. Then tell me anything that looks broken, cramped, or hard to read."*
-
-Approve the steps and **watch** — a real browser window pops open and Playwright drives it: loading your page, resizing, snapping screenshots. Then it reports back like a first-time visitor would.
-
-> 💡 Playwright shines on a real, responsive page — **point it at your site, not a slide deck.**
-
-**3. Fix and re-check.**
-> *"Fix the issues you found, then run Playwright again to confirm the page looks right on both sizes."*
-
-> ✅ **Worked if** you get two screenshots and a list of findings — and the second run looks cleaner than the first.
->
-> **Can't install it?** Watch the instructor's run and try it at home. The idea — *the agent can see your site, not just write it* — is what matters.
-
----
-
-## Challenge 5 — Publish It Live: Netlify (~12 min)
-
-**Goal:** Take the site off your laptop and put it on the **public internet** with a real URL you can share. This is an **MCP** — it connects the agent to a live external service so it can *act* there. You describe it; the agent deploys it.
-
-**1. Watch first.** Your instructor will ask a connected Claude to *"publish this folder to Netlify"* — and a real `https://….netlify.app` link appears in seconds.
-
-**2. Set yours up.** Three short commands:
-```
-npm install -g netlify-cli
-netlify login
-claude mcp add netlify npx -- -y @netlify/mcp
-```
-`netlify login` opens a browser — click **Authorize** (sign up free first if you don't have an account; GitHub/Google/email all work). Then **fully restart Claude Code** (quit and reopen) — new MCP servers only load on restart.
-
-> ✅ **Worked if**, after restart, typing `/mcp` lists **netlify** as connected.
-
-**3. Ship it.** In your project folder, start `claude` and say:
-> *"Publish this folder to Netlify and give me the live URL."*
-
-Approve the steps. In a few seconds you get a real link — **open it on your phone.** Then iterate without leaving Claude:
-> *"Change the headline to '…' and redeploy."* → refresh the URL, it updates.
-> *"Give the site a memorable custom name."*
-
-> **Can't connect in time?** No stress — **watch the demo and finish at home.** Setup notes are in "Take It Further" below. (We go deeper on MCP in Session 4.)
->
-> ⚠️ A deployed site is **public** — don't put anything private on it. The free tier is plenty for this.
-
----
-
 ## Group Debrief
 
-- Who got a live URL? Drop it in the chat — let's open a few.
-- How did the **design skill** change your site? What did **Playwright** catch that you'd have missed?
-- Walk back through what you did: you pointed an agent at a folder, built a real site, made it beautiful, gave it eyes to check itself, and published it to the internet — **and you never wrote a line of code.** You *directed*. That's the whole game.
+- Who got their site redesigned by the skill? Let's open a couple — before and after.
+- How did the **design skill** change your site? What style did it pick for *your* business?
+- Walk back through what you did: you pointed an agent at a folder, built a real site from your own material, then installed expertise to make it beautiful — **and you never wrote a line of code.** You *directed*. That's the whole game.
+
+> 🔜 **Next session** we hand this same site two more powers: **eyes** (a real browser the agent drives to debug it) and a **live URL** on the public internet. **Keep your folder** — we pick up right here.
+
+---
+
+## 🆘 Stuck? Quick fixes
+
+| What you see | Likely cause | Fix |
+|---|---|---|
+| `claude` won't start or log in | not on a paid plan, or the install didn't finish | Confirm you're on a **paid** plan (Pro/Max/Console) and reopen the terminal. Still stuck? Do every exercise in **[Claude.ai](https://claude.ai)** with file upload — paste your folder's notes straight in. |
+| `/plugin marketplace add …` errors out | the marketplace name moved, or a network hiccup | Re-run the two install lines exactly as written. If it still won't install, no stress — keep iterating on the design by just *describing* the look you want; the skill is a shortcut, not the only way. |
+| `/init` seems to hang | it's reading every file in a large folder | Give it a moment. If the folder is huge, tell Claude to focus on the few files that matter and re-run. |
+
+*(Setup problems — installing Claude Code, Git, signing in — are covered in this repo's **README**. Bring anything that won't budge to the start-of-session setup clinic.)*
+
+---
+
+## 🔜 Next session — finish the build
+
+You'll keep building in **this same folder**. In the Session 3 lab you'll:
+
+- **Give the agent eyes** — install **Playwright**, a real browser it opens, screenshots, and uses to catch what's broken on your site.
+- **Publish it live** — connect **Netlify** (an MCP) and put your site on the public internet with a real URL you can share.
+
+Don't delete the folder. Bring it back next time, exactly as you left it.
 
 ---
 ---
 
-# 🚀 Take It Further (At Home)
+# 🚀 Take It Further (At Home) — *bonus*
 
-*In the session you built, designed, debugged, and published a real website — using a skill, a CLI tool, and an MCP. Here's one more power to add at home: letting the agent work across your whole **Google Workspace**. It's the most involved setup of the bunch, so save it for when you've got time to go slow.*
+*You just built a real website and made it beautiful with a skill — all by directing an agent. Here's one more power you can add **at home**, if you want to push further: a tool that lets the agent work across your whole **Google Workspace** (Gmail, Calendar, Drive). It's the most involved setup of the bunch, so save it for when you've got time to go slow — it's a bonus, not homework.*
 
 > 🔐 **One rule:** this connects the agent to a *real* account. Keep approving actions one at a time, and **never paste a token or password into a shared chat.** Treat access keys like house keys.
 
@@ -173,9 +137,9 @@ Approve the steps. In a few seconds you get a real link — **open it on your ph
 
 ## CLI tool — `GWS`, your Google Workspace *(optional boss level)*
 
-**What it is:** a command-line tool the agent can run on your behalf. **GWS** ("Google Workspace CLI") lets the agent reach into your Gmail, Calendar, Drive, Docs, and Sheets straight from the terminal.
+**What it is:** a command-line tool the agent can run on your behalf. **GWS** ("Google Workspace CLI") lets the agent reach into your Gmail, Calendar, Drive, Docs, and Sheets straight from the terminal. *(Remember the "app store" idea — Skills, MCP, **CLI tools**? This is a CLI tool, the third aisle.)*
 
-> 🔴 **This is the boss level — the most involved setup** (~15 minutes), because Google makes *you* create the access credentials. You've got four wins under your belt now; tackle this when you can go slow. Every click is listed below.
+> 🔴 **This is the boss level — the most involved setup** (~15 minutes), because Google makes *you* create the access credentials. Tackle it when you can go slow. Every click is listed below.
 
 ### Step A — Install the tool
 - **Any OS (needs Node):** `npm install -g @googleworkspace/cli`
@@ -237,41 +201,13 @@ Now just talk to Claude in plain English — it'll run `gws` for you:
 - **Test-user logins expire** after a while — if it suddenly asks you to re-auth, just run `gws auth login …` again.
 - Real account, real data — keep human approval on, and never run it against an account you can't afford to have changed.
 
----
-
-## Stuck? Quick fixes
+### Stuck? GWS quick fixes
 
 | What you see | Likely cause | Fix |
 |---|---|---|
 | `npm: command not found` | Node.js isn't installed | Install Node **LTS** from [nodejs.org](https://nodejs.org) (or `brew install node`), then **reopen your terminal** |
-| `/mcp` doesn't list **netlify** | Claude Code wasn't restarted after `claude mcp add` | Fully **quit and reopen** Claude Code — MCP servers load only at startup |
-| `netlify status` says "Not logged in" | the browser login closed before it finished | Re-run `netlify login` and wait for *"You are now logged in"* in the terminal before closing the tab |
-| Playwright says "browser not found" | the engines didn't finish downloading | Run `npx playwright install` and let it finish |
 | `gws auth status` still shows `"none"` | the client JSON is in the wrong place or misnamed | Put the downloaded file at the **exact `client_config` path** from `gws auth status`, named `client_secret.json` |
 | Google: *"Google hasn't verified this app"* | normal for your own personal project | Click **Advanced → Go to gws-cli (unsafe)** → continue |
 | GWS suddenly asks you to log in again | the test-user token expired | Just re-run `gws auth login …` |
 
----
-
-## 🏆 Capstone — the full play, solo
-
-Once GWS works, chain everything you learned into one instruction stream and watch the agent run the whole thing:
-
-1. **Design** (skill): *"Redesign my one-page site to look professional."*
-2. **Publish** (Netlify MCP): *"Now publish it to Netlify and give me the live URL."*
-3. **Tell the world** (GWS): *"Email me that link with the subject 'My site is live'."*
-
-You just directed three different powers — a craft, a live service, and your own Google account — in a single breath, and never touched code.
-
-> Step 3 *sends* an email, which needs write access. If you set GWS up read-only, re-run `gws auth login -s drive,gmail,calendar` (without `--readonly`) first — or swap step 3 for a read-only finish: *"Check my calendar and suggest the best afternoon this week to announce the launch."*
-
----
-
-## One more thing — *what these don't do* (so you stay in charge)
-
-You now have several new powers wired into your agent. The honest limits:
-
-- **They make you faster, not unsupervised.** Each add-on widens what the agent can *touch* — your files, your inbox, the public web. Keep approving actions one at a time until you trust a flow.
-- **A skill gives taste; you give substance.** Design ≠ strategy. The agent makes your message land; you still decide the message.
-- **Reach cuts both ways.** A CLI or MCP that can read your email or publish a site can also change or expose things. Start read-only, deploy only what's meant to be public, and guard your tokens.
-- **Where to go next:** there are skills for writing, research, and data; CLIs for almost every tool you use; and MCPs for Slack, Notion, GitHub, databases, and hundreds more. The pattern never changes — **install once, then direct.** That's the whole game.
+*(You'll see GWS again next session — it's the final link in the build capstone, after you've published your site.)*
