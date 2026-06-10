@@ -197,6 +197,7 @@ You're fully set up — **there's nothing to build yet.** We'll do all the hands
 | `'irm' is not recognized…` (Windows) | You're in CMD, not PowerShell. Your prompt should start with `PS`. Open a fresh terminal (VS Code defaults to PowerShell). |
 | `claude` won't log in / "no access" | Make sure you're on a **paid** plan (Pro/Max/Console). The free plan can't run Claude Code. |
 | Mac: *"can't be opened, unidentified developer"* | Right-click the app → **Open** → **Open** again. |
+| Hebrew shows up **reversed** in the terminal | VS Code's terminal can't display right-to-left text. Use the **Claude panel** instead (Claude logo in the left sidebar) — Hebrew works fine there. Full tip: **challenges.md → Working in Hebrew**. |
 | Totally stuck | No stress — bring it to the start-of-session setup clinic, or follow **Act 1** in **[Claude.ai](https://claude.ai)** in your browser. |
 
 Never used a terminal before? This short official guide helps: **https://code.claude.com/docs/en/terminal-guide**
