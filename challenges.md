@@ -108,16 +108,11 @@ Now **iterate** — this is where it gets fun. One instruction at a time:
 | `claude` won't start or log in | not on a paid plan, or the install didn't finish | Confirm you're on a **paid** plan (Pro/Max/Console) and reopen the terminal. Still stuck? Do every exercise in **[Claude.ai](https://claude.ai)** with file upload — paste your folder's notes straight in. |
 | `/plugin marketplace add …` errors out | the marketplace name moved, or a network hiccup | Re-run the two install lines exactly as written. If it still won't install, no stress — keep iterating on the design by just *describing* the look you want; the skill is a shortcut, not the only way. |
 | `/init` seems to hang | it's reading every file in a large folder | Give it a moment. If the folder is huge, tell Claude to focus on the few files that matter and re-run. |
-| Hebrew comes out **reversed / scrambled** in the terminal | VS Code's terminal can't display right-to-left text — it's not you, and not Claude | Use the **Claude panel** instead of the terminal — see **Working in Hebrew** just below. |
+| Hebrew comes out **reversed / scrambled** | a display limitation — it's not you, and not Claude | Follow the step-by-step guide: **[hebrew-rtl-fix.md](hebrew-rtl-fix.md)** |
 
 ### 🔤 Working in Hebrew (RTL)
 
-Typing or reading Hebrew in the terminal and it comes out backwards? That's a known limitation of VS Code's built-in terminal — it can't display right-to-left languages. Two good ways around it:
-
-1. **Use the Claude panel instead of the terminal** *(recommended)*. Click the **Claude logo** in VS Code's left sidebar — it's the *same agent* in a chat panel, and Hebrew displays correctly there. (Don't see the logo? Running `claude` in the terminal once usually installs it; otherwise add the **"Claude Code" extension** from the Extensions view.) Everything from class — `/init`, the build, skills — works exactly the same, with nicer buttons.
-2. **Keep Hebrew in files, not in the chat box.** Write your Hebrew content in a `.md` file — the *editor* shows Hebrew perfectly — then point Claude at it: *"use the text in `@about-he.md`"*. Same trick in reverse: when you want Hebrew *output*, ask Claude to **write it into a file** instead of printing it, and read it in the editor.
-
-*(Setup problems — installing Claude Code, Git, signing in — are covered in this repo's **README**. Bring anything that won't budge to the start-of-session setup clinic.)*
+Hebrew coming out backwards — in the terminal or in the Claude panel? Every case has a fix, from a one-click switch to a one-command patch script. **→ Follow the full guide: [hebrew-rtl-fix.md](hebrew-rtl-fix.md)**
 
 ---
 
