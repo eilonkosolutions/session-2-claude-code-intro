@@ -2,7 +2,7 @@
 
 Welcome 👋 This is your workspace for **Session 2 — Your First Build (From Chatting to Directing).**
 
-By the end you'll have gone from *chatting* with AI to *directing* it: Claude Code running on your laptop, a real one-page website you built by describing it, a design *skill* installed, and Claude connected to your own calendar.
+By the end you'll have gone from *chatting* with AI to *directing* it: Claude Code running on your laptop, a real multi-section website built from your own material, and a design *skill* installed that makes it beautiful in one command.
 
 > You won't write any code. You describe an *outcome*, give the agent context, and check the result. **That's directing.**
 
@@ -15,12 +15,12 @@ By the end you'll have gone from *chatting* with AI to *directing* it: Claude Co
 ### Accounts you'll need
 
 - **A *paid* Claude plan** — Pro, Max, or a Console (API) account. ⚠️ The **free** Claude.ai plan can chat, but it **cannot run Claude Code**, which is the tool this whole session is built on. Check at [claude.ai](https://claude.ai) → your initials → **Settings → Billing**.
-- **A Google account, signed into your browser** (Gmail / Calendar). We use it near the end for the "connect an app" part.
+- **A Google account** — *optional*: only needed if you later try the at-home **"🚀 Take It Further"** bonus in `challenges.md` (connecting the agent to your Gmail / Calendar / Drive). Nothing to set up now — having a Gmail is enough.
 - **No GitHub account needed.** You're only *downloading* a public folder — no signup, no login, nothing to connect.
 
-### What you'll install (5 steps)
+### What you'll install (4 steps + one thing to prepare)
 
-VS Code → Claude Code → Git → grab this folder → sign into Google. Here's each, step by step.
+VS Code → Claude Code → Git → grab this folder → **prepare your content folder**. Here's each, step by step.
 
 ---
 
@@ -161,11 +161,17 @@ You'll miss the "clone" practice, but you'll have every file — and that's what
 
 ---
 
-### Step 5 — Sign into Google in your browser
+### Step 5 — Prepare your content folder (the most important step)
 
-Near the end we'll connect Claude to your calendar. Just make sure you're **logged into your Google account** (Gmail or Calendar) in your normal browser. Nothing to install.
+Everything you build in the session grows out of **raw material about your business** (or a side project, community group, or event you care about). Make a folder on your computer — call it anything, e.g. `my-business` — and drop in whatever you have:
 
-✅ **Worked if:** opening [calendar.google.com](https://calendar.google.com) shows *your* calendar.
+- a few notes or bullet points about what you do and who it's for
+- an old document — a flyer, an "about us" text, a proposal, a price list
+- anything else that describes the business in your own words
+
+It doesn't need to be polished or complete — two or three messy files are plenty. **The point is that it's *yours*:** the website you build will be made from this, not from generic examples.
+
+✅ **Worked if:** you have a folder with 1–5 files of real material in it, and you know where it is.
 
 ---
 
@@ -175,15 +181,15 @@ Near the end we'll connect Claude to your calendar. Just make sure you're **logg
 - [ ] `claude --version` shows a number, and `claude` signed in with your **paid** plan
 - [ ] `git --version` shows a number
 - [ ] VS Code shows this folder's files (`README.md` + `challenges.md`)
-- [ ] You're signed into Google in your browser
+- [ ] Your **content folder** is ready — a few real files about your business
 
-All five ticked? You're set. **Also bring one real task from your work** you'd like to hand off — a chore, a messy folder to make sense of, or something you'd like to build.
+All five ticked? You're set.
 
 ---
 
 ## That's all the prep 🎉
 
-You're fully set up — **there's nothing to build yet.** We'll do all the hands-on together in the session, step by step. Just arrive with your five checks ticked and one real task in mind.
+You're fully set up — **there's nothing to build yet.** We'll do all the hands-on together in the session, step by step. Just arrive with your five checks ticked and your content folder ready.
 
 ---
 
@@ -197,7 +203,7 @@ You're fully set up — **there's nothing to build yet.** We'll do all the hands
 | `'irm' is not recognized…` (Windows) | You're in CMD, not PowerShell. Your prompt should start with `PS`. Open a fresh terminal (VS Code defaults to PowerShell). |
 | `claude` won't log in / "no access" | Make sure you're on a **paid** plan (Pro/Max/Console). The free plan can't run Claude Code. |
 | Mac: *"can't be opened, unidentified developer"* | Right-click the app → **Open** → **Open** again. |
-| Hebrew shows up **reversed** in the terminal | VS Code's terminal can't display right-to-left text. Use the **Claude panel** instead (Claude logo in the left sidebar) — Hebrew works fine there. Full tip: **challenges.md → Working in Hebrew**. |
+| Hebrew shows up **reversed or in the wrong order** | The terminal can't display right-to-left text at all — use the **Claude panel** instead (Claude logo in the left sidebar). Mixed Hebrew-English still scrambled *in the panel*? Install the **Claude Code RTL Support** extension and click its **⇄** button. Full guide: **[hebrew-rtl-fix.md](hebrew-rtl-fix.md)**. |
 | Totally stuck | No stress — bring it to the start-of-session setup clinic, or follow **Act 1** in **[Claude.ai](https://claude.ai)** in your browser. |
 
 Never used a terminal before? This short official guide helps: **https://code.claude.com/docs/en/terminal-guide**
